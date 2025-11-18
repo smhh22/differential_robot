@@ -1,3 +1,10 @@
+# Simulator core clock
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+
 # Joint states
 - ros_topic_name: "/joint_states"
   gz_topic_name: "/joint_states"
@@ -24,13 +31,6 @@
   gz_topic_name: "/zed/zed_node/imu/data_raw"
   ros_type_name: "sensor_msgs/msg/Imu"
   gz_type_name: "gz.msgs.IMU"
-  direction: GZ_TO_ROS
-  
-# Odometry from DiffDrive
-- ros_topic_name: "/wheel_encoder/odom"
-  gz_topic_name: "/wheel_encoder/odom"
-  ros_type_name: "nav_msgs/msg/Odometry"
-  gz_type_name: "gz.msgs.Odometry"
   direction: GZ_TO_ROS
 
 # Left motor RPM command
