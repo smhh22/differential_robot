@@ -19,9 +19,38 @@
   gz_type_name: "gz.msgs.LaserScan"
   direction: GZ_TO_ROS
   
-  # IMU sensor
+# IMU sensor
 - ros_topic_name: "/zed/zed_node/imu/data_raw"
   gz_topic_name: "/zed/zed_node/imu/data_raw"
   ros_type_name: "sensor_msgs/msg/Imu"
   gz_type_name: "gz.msgs.IMU"
   direction: GZ_TO_ROS
+  
+# Odometry from DiffDrive
+- ros_topic_name: "/wheel_encoder/odom"
+  gz_topic_name: "/wheel_encoder/odom"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
+
+# Left motor RPM command
+- ros_topic_name: "/left_wheel_rpm"
+  gz_topic_name: "/left_wheel_rpm"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+# Right motor RPM command
+- ros_topic_name: "/right_wheel_rpm"
+  gz_topic_name: "/right_wheel_rpm"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+# Command velocity to DiffDrive
+- ros_topic_name: "/cmd_vel"
+  gz_topic_name: "/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
